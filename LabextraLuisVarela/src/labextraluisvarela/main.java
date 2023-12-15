@@ -552,6 +552,7 @@ public class main extends javax.swing.JFrame {
             }
         }
         p.add(new Partido(e1, e2, Integer.parseInt(puntaje1.getText()), Integer.parseInt(puntaje2.getText())));
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -567,6 +568,8 @@ public class main extends javax.swing.JFrame {
         temp.setE(e);
         temp.setP(p);
         t.add(temp);
+        tempe = new ArrayList();
+        tempp = new ArrayList();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -578,20 +581,21 @@ public class main extends javax.swing.JFrame {
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         if (jTabbedPane1.getSelectedIndex() == 2) {
-            
             DefaultComboBoxModel cb1 = (DefaultComboBoxModel) equipo1cb.getModel();
             DefaultComboBoxModel cb2 = (DefaultComboBoxModel) equipo2cb.getModel();
+            cb1.removeAllElements();
+            cb2.removeAllElements();
             for (equipo equi : e) {
                 cb1.addElement("" + equi.getNombre());
                 cb2.addElement("" + equi.getNombre());
             }
-            equipo1cb.setModel(cb1);
-            equipo2cb.setModel(cb2);
         } else if (jTabbedPane1.getSelectedIndex() == 3) {
             cbequipo.removeAllItems();
             cbpartido.removeAllItems();
             DefaultComboBoxModel cb1 = (DefaultComboBoxModel) cbequipo.getModel();
             DefaultComboBoxModel cb2 = (DefaultComboBoxModel) cbpartido.getModel();
+            cb1.removeAllElements();
+            cb2.removeAllElements();
             for (equipo equi : e) {
                 cb1.addElement("" + equi.getNombre());
             }
@@ -602,6 +606,7 @@ public class main extends javax.swing.JFrame {
         } else if (jTabbedPane1.getSelectedIndex() == 4) {
             cbtorneo.removeAllItems();
             DefaultComboBoxModel cb1 = (DefaultComboBoxModel) cbtorneo.getModel();
+            cb1.removeAllElements();
             for (Torneo torneo : t) {
                 cb1.addElement("" + torneo.getNombre());
             }
@@ -651,12 +656,12 @@ public class main extends javax.swing.JFrame {
             }
         });
     }
-    ArrayList<Torneo> tempt = new ArrayList();
-    ArrayList<Torneo> t = new ArrayList();
-    ArrayList<Partido> tempp = new ArrayList();
-    ArrayList<Partido> p = new ArrayList();
-    ArrayList<equipo> tempe = new ArrayList();
-    ArrayList<equipo> e = new ArrayList();
+    public ArrayList<Torneo> tempt = new ArrayList();
+    public ArrayList<Torneo> t = new ArrayList();
+    public ArrayList<Partido> tempp = new ArrayList();
+    public ArrayList<Partido> p = new ArrayList();
+    public ArrayList<equipo> tempe = new ArrayList();
+    public ArrayList<equipo> e = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NombreDeporte;
     private javax.swing.JTextField NombreDeporte1;
